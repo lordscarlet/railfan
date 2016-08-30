@@ -5,12 +5,12 @@
 
 // union station: http://transit.land/api/v1/stops/s-dqcjr8vxkm-washingtonunionstationamtrak
 var onestop_id = "s-dqcjr8vxkm-washingtonunionstationamtrak";
-var endpoint = "http://transit.land/api/v1/stops/" + onestop_id;
+var endpoint = "https://transit.land/api/v1/stops/" + onestop_id;
 var start = '2016-08-29';
 var end = '2016-08-30';
 var per_page = 1000;
-var scheduleendpoint = "http://transit.land/api/v1/schedule_stop_pairs?per_page=" + per_page + "&service_from_date=" + start + "&service_before_date=" + end + "&origin_onestop_id="
-var destinationendpoint = "http://transit.land/api/v1/schedule_stop_pairs?per_page=" + per_page + "&service_from_date=" + start + "&service_before_date=" + end + "&destination_onestop_id="
+var scheduleendpoint = "https://transit.land/api/v1/schedule_stop_pairs?per_page=" + per_page + "&service_from_date=" + start + "&service_before_date=" + end + "&origin_onestop_id="
+var destinationendpoint = "https://transit.land/api/v1/schedule_stop_pairs?per_page=" + per_page + "&service_from_date=" + start + "&service_before_date=" + end + "&destination_onestop_id="
 
 function stationViewModel(data) {
     var self = this;
