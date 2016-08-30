@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Railfan Optimizer</title>
+    
+    <link rel="stylesheet" href="css/site.css">
+    
+  </head>
+  <body>
+    <!-- ko if: loaded() -->
+    <h1 data-bind="text: station.name"></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Traffic</th>
+            </tr>
+        </thead>
+        <tbody class="in-and-out">
+            <!-- ko foreach: station.segments -->
+            <tr>
+                <td><span data-bind="text: parseInt(hour) < 10 ? '0' + hour : hour"></span>:<span data-bind="text: parseInt(minutes) < 10 ? '0' + minutes : minutes"></span></td>
+                <td>
+                    <ul>
+                        <!-- ko if: inbound.length == 0 && outbound.length == 0 -->
+                        <li></li>
+                        <!-- /ko -->
+                        <!-- ko foreach: inbound -->
+                        <li class="inbound"><span class="number" data-bind="text: trip_short_name"></span></li>
+                        <!-- /ko -->
+                        <!-- ko foreach: outbound -->
+                        <li class="outbound"><span class="number" data-bind="text: trip_short_name"></span></li>
+                        <!-- /ko -->
+                    </ul>
+                </td>
+            </tr>
+            <!-- /ko -->
+            
+        </tbody>
+    </table>
+    <!-- /ko -->
+    <script src="js/lib/jquery/jquery-1.11.2.js"></script>
+    <script src="js/lib/knockout/knockout-3.4.0.js"></script>
+    <script src="js/lib/knockout/knockout.mapping.js"></script>
+    <script src="js/viewmodels/index.js"></script>
+  </body>
+</html>
